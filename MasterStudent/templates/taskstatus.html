@@ -1,0 +1,36 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+<body>
+<center>
+  <h2>STATUS</h2>
+<form>
+    <table border="2" class="table">
+    <tr>
+      <th>Left</th>
+      <th>Operator</th>
+      <th>Right</th>
+      <th>Status</th>
+      <th>Students</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{i.Left}}</td>
+      <td>{{i.Operation}}</td>
+      <td>{{i.Right}}</td>
+      <td>{% if i.Status == True %}
+        completed
+        {%else%}
+        Pending
+        {% endif %}
+      </td>
+      <td>{{i.Students}}</td>
+      </tr>
+      {% endfor %}
+
+  </table>
+  <a href="navbar.html"><input type="button" value="back"></a>
+</form>
+</center>
+</body>
+{% endblock %}

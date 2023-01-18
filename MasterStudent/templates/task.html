@@ -1,0 +1,66 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+<body>
+<h2 align="center">Task's Menu</h2>
+</body>
+<form method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>First Number :</td>
+            <td><select name="ddlfno">
+
+                <option>Zero</option>
+                <option>One</option>
+                <option>Two</option>
+                <option>Three</option>
+                <option>Four</option>
+                <option>Five</option>
+                <option>Six</option>
+                <option>Seven</option>
+                <option>Eight</option>
+                <option>Nine</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Second Number:</td>
+            <td><select name="ddlsno">
+
+                <option>Zero</option>
+                <option >One</option>
+                <option>Two</option>
+                <option>Three</option>
+                <option>Four</option>
+                <option>Five</option>
+                <option>Six</option>
+                <option>Seven</option>
+                <option>Eight</option>
+                <option>Nine</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Operation :</td>
+            <td><select name="ddlop">
+                <option  >Plus</option>
+                <option>Times</option>
+                <option>Minus</option>
+                <option>Divided_by</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Student</td>
+            <td><select name="ddlstd">
+                {% for i in data %}
+                <option>{{i.S_Name}}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="btnsub" value="Assign"></td>
+        </tr>
+    </table>
+    <h2 align="center" style="background-color:white; color:red;">{{note}} {{name}}</h2>
+</form>
+{% endblock %}

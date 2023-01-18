@@ -1,0 +1,35 @@
+{% extends 'navbar1.html' %}
+{% block content %}
+<body>
+<h2 align="center">Assignments</h2>
+<form>
+  <table border="2" align="center" class="table">
+    <tr>
+      <th>Left</th>
+      <th>Operator</th>
+      <th>Right</th>
+      <th>Status</th>
+      <th>Solve</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{i.Left}}</td>
+      <td>{{i.Operation}}</td>
+      <td>{{i.Right}}</td>
+      <td>{% if i.Status == True %}
+        completed
+        {%else%}
+        not completed
+        {% endif %}
+      </td>
+      <td><a href="{% url 'sol' i.id %}">Solve</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+  {% for i in task %}
+  <h2 align="center">{{i.Left}}({{i.Operation}}({{i.Right}})) = {{result}}</h2>
+  {% endfor %}
+</form>
+
+</body>
+{% endblock %}

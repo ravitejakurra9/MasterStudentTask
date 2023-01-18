@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reg.css' %}">
+   </head>
+<body>
+  <div class="container">
+    {% block heading %}
+    <div class="title">Student Registration</div>
+    {% endblock %}
+
+    <div class="content">
+      <form method="post">
+          {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" name="txtname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Enter your email" name="txtemail" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" name="txtmobile" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" name="txtpwd" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+          <div>
+              <h4 align="center" style="color:red">{{data}}</h4>
+          </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body class="background">-->
+<!--<h2 align="center">Student Registration </h2>-->
+<!--    <h2 align="center" style="color:red">{{data}}</h2>-->
+<!--<form method="post">-->
+<!--    {% csrf_token %}-->
+<!--  <table align="center">-->
+<!--    <tr>-->
+<!--        <td>Name :</td>-->
+<!--        <td><input type="text" name="txtname"></td>-->
+<!--    </tr>-->
+<!--      <tr>-->
+<!--        <td>Mobile</td>-->
+<!--        <td><input type="text" name="txtmobile"></td>-->
+<!--    </tr>-->
+<!--      <tr>-->
+<!--        <td>email :</td>-->
+<!--        <td><input type="email" name="txtemail"></td>-->
+<!--    </tr>-->
+<!--      <tr>-->
+<!--        <td>Password</td>-->
+<!--        <td><input type="password" name="txtpwd"></td>-->
+<!--    </tr>-->
+<!--      <tr>-->
+<!--        <td></td>-->
+<!--        <td><input type="submit" name="btnsub" value="Submit"></td>-->
+<!--    </tr>-->
+<!--  </table>-->
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->

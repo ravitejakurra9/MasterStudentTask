@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link href="{% static 'css/log.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form id="f1" method="post">
+        {% csrf_token %}
+        <h4 style="color:red" align="center">{{data}}</h4>
+        <h3>Student Login </h3>
+
+        <label for="Email">Username</label>
+        <input type="email" placeholder="Email" name="txtemail">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" name="txtpwd">
+      <button type="submit" form="f1">Log In</button>
+        <div class="social">
+          <a href="{% url 'sreg'%}" style="text-decoration: none;"><div>Register</div></a>&nbsp;
+            <a href="{% url 'home'%}" style="text-decoration: none;"><div>Home</div></a>
+
+        </div>
+    </form>
+</body>
+</html>
